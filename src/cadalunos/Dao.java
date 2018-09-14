@@ -23,16 +23,17 @@ public class Dao {
         this.statement = this.connection.createStatement();        
     }
     
-    public ArrayList QueryExecute(String Query) throws Exception {
-        String Resultado = "";
-        ArrayList<String> alunos = new ArrayList();
-        
+    public ResultSet QueryExecute(String Query) throws Exception {                        
         this.resultSet = this.statement.executeQuery(Query);
         
-        while(resultSet.next()) {
-            alunos.add(this.resultSet.getString("nome"));
-        }
+//        while(resultSet.next()) {
+//            alunos.add(this.resultSet.getString("nome"));
+//        }
         
-        return alunos;
+        return this.resultSet;
+    }
+    
+    public void Insere(String Query) throws Exception {
+        this.statement.execute(Query);
     }
 }
