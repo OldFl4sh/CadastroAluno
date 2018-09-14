@@ -17,6 +17,7 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        lblLogoutMenu = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuArquivo = new javax.swing.JMenu();
         optCadastros = new javax.swing.JMenuItem();
@@ -28,15 +29,28 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
+            .addGap(0, 762, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 228, Short.MAX_VALUE)
         );
 
+        lblLogoutMenu.setIcon(new javax.swing.ImageIcon("C:\\Users\\supdesenvolvimento\\Documents\\CadastroAluno\\ico\\logout50.png")); // NOI18N
+        lblLogoutMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLogoutMenuMouseClicked(evt);
+            }
+        });
+
+        jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
+        jMenuBar1.setForeground(new java.awt.Color(102, 102, 102));
+
+        menuArquivo.setForeground(new java.awt.Color(204, 204, 204));
         menuArquivo.setText("Arquivo");
 
+        optCadastros.setBackground(new java.awt.Color(51, 51, 51));
+        optCadastros.setForeground(new java.awt.Color(204, 204, 204));
         optCadastros.setText("Cadastros");
         optCadastros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -45,6 +59,8 @@ public class Menu extends javax.swing.JFrame {
         });
         menuArquivo.add(optCadastros);
 
+        optListar.setBackground(new java.awt.Color(51, 51, 51));
+        optListar.setForeground(new java.awt.Color(204, 204, 204));
         optListar.setText("Listar");
         menuArquivo.add(optListar);
 
@@ -56,13 +72,19 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 118, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblLogoutMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 239, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
+                .addComponent(lblLogoutMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -73,6 +95,10 @@ public class Menu extends javax.swing.JFrame {
         
         cad.setVisible(true);
     }//GEN-LAST:event_optCadastrosActionPerformed
+
+    private void lblLogoutMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoutMenuMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_lblLogoutMenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -112,6 +138,7 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblLogoutMenu;
     private javax.swing.JMenu menuArquivo;
     private javax.swing.JMenuItem optCadastros;
     private javax.swing.JMenuItem optListar;
