@@ -301,47 +301,51 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="lblEmailAluno" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtEmailAluno" min="-2" pref="433" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="lblNomeAluno" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtNomeAluno" min="-2" pref="433" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="lblSobrenomeAluno" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="27" max="32767" attributes="0"/>
-                                  <Component id="txtSobrenomeAluno" min="-2" pref="433" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="lblMatriculaAluno" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtMatriculaAluno" min="-2" pref="433" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblNascimentoAluno" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblEmailAluno" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblTelefoneAluno" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtEmailAluno" alignment="0" min="-2" pref="433" max="-2" attributes="0"/>
+                                              <Component id="txtTelefoneAluno" alignment="0" min="-2" pref="433" max="-2" attributes="0"/>
+                                              <Component id="txtNascimentoAluno" alignment="1" min="-2" pref="433" max="-2" attributes="0"/>
+                                              <Component id="cbTurmaAluno" alignment="0" min="-2" pref="433" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblNomeAluno" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="txtNomeAluno" min="-2" pref="433" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblSobrenomeAluno" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace pref="27" max="32767" attributes="0"/>
+                                          <Component id="txtSobrenomeAluno" min="-2" pref="433" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="lblMatriculaAluno" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="txtMatriculaAluno" min="-2" pref="433" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="btnSalvarAluno" min="-2" pref="433" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="lblLogoutAl" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" min="-2" pref="190" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lblTelefoneAluno" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtTelefoneAluno" min="-2" pref="433" max="-2" attributes="0"/>
+                                  <Component id="lblTurmaAluno" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblNascimentoAluno" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblTurmaAluno" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtNascimentoAluno" pref="433" max="32767" attributes="0"/>
-                                      <Component id="cbTurmaAluno" max="32767" attributes="0"/>
-                                      <Component id="btnSalvarAluno" alignment="1" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lblLogoutAl" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="190" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -353,6 +357,11 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblMatriculaAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtMatriculaAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblNomeAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtNomeAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -361,42 +370,38 @@
                                       <Component id="lblSobrenomeAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtSobrenomeAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblMatriculaAluno" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtMatriculaAluno" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblTelefoneAluno" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtTelefoneAluno" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
                               <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtNascimentoAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNascimentoAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblEmailAluno" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtEmailAluno" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblNascimentoAluno" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtNascimentoAluno" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblTurmaAluno" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cbTurmaAluno" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="141" max="32767" attributes="0"/>
+                              <Component id="lblEmailAluno" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtEmailAluno" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblTelefoneAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTelefoneAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblTurmaAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbTurmaAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnSalvarAluno" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="83" max="32767" attributes="0"/>
                                   <Component id="lblLogoutAl" min="-2" pref="61" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -676,10 +681,10 @@
                               <Component id="txtNomeTurma" pref="439" max="32767" attributes="0"/>
                               <Component id="txtTurno" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="90" max="32767" attributes="0"/>
+                          <EmptySpace min="90" pref="256" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="614" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblLogoutTurma" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="jLabel5" alignment="1" min="-2" pref="190" max="-2" attributes="0"/>

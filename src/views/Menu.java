@@ -62,6 +62,11 @@ public class Menu extends javax.swing.JFrame {
         optListar.setBackground(new java.awt.Color(51, 51, 51));
         optListar.setForeground(new java.awt.Color(204, 204, 204));
         optListar.setText("Listar");
+        optListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optListarActionPerformed(evt);
+            }
+        });
         menuArquivo.add(optListar);
 
         jMenuBar1.add(menuArquivo);
@@ -99,6 +104,12 @@ public class Menu extends javax.swing.JFrame {
     private void lblLogoutMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoutMenuMouseClicked
         this.dispose();
     }//GEN-LAST:event_lblLogoutMenuMouseClicked
+
+    private void optListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optListarActionPerformed
+        Listar list = new Listar();
+        
+        list.setVisible(true);
+    }//GEN-LAST:event_optListarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -14,9 +14,9 @@ public class Dao {
     private ResultSet resultSet;
     
     public Dao() throws Exception {
-        this.DATABASE_USER = "root";
-        this.DATABASE_PASS = "root";
-        this.BASE_URL = "jdbc:mysql://localhost:3306/cadastroescola";
+        this.DATABASE_USER = "quantum";
+        this.DATABASE_PASS = "quantum28042004";
+        this.BASE_URL = "jdbc:mysql://localhost:3390/cadastroescola";
         
         //Abre uma conexão com o banco de dados toda vez que a classe for instanciada
         this.connection = DriverManager.getConnection(this.BASE_URL, this.DATABASE_USER, this.DATABASE_PASS);
