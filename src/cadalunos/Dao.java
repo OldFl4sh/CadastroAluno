@@ -16,7 +16,7 @@ public class Dao {
     public Dao() throws Exception {
         this.DATABASE_USER = "root";
         this.DATABASE_PASS = "root";
-        this.BASE_URL = "jdbc:mysql://localhost:3306/aula";
+        this.BASE_URL = "jdbc:mysql://localhost:3306/cadastroescola";
         
         //Abre uma conexão com o banco de dados toda vez que a classe for instanciada
         this.connection = DriverManager.getConnection(this.BASE_URL, this.DATABASE_USER, this.DATABASE_PASS);
@@ -25,15 +25,11 @@ public class Dao {
     
     public ResultSet QueryExecute(String Query) throws Exception {                        
         this.resultSet = this.statement.executeQuery(Query);
-        
-//        while(resultSet.next()) {
-//            alunos.add(this.resultSet.getString("nome"));
-//        }
-        
+             
         return this.resultSet;
     }
     
-    public void Insere(String Query) throws Exception {
+    public void FastQuery(String Query) throws Exception {
         this.statement.execute(Query);
     }
 }
