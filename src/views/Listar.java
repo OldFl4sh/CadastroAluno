@@ -1,10 +1,16 @@
 package views;
+import cadalunos.Main;
+import javax.swing.*;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 public class Listar extends javax.swing.JFrame {
 
     public Listar() {
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -19,7 +25,7 @@ public class Listar extends javax.swing.JFrame {
         txtNomeProfessor = new javax.swing.JTextField();
         lblNomeProfessor = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblListaProf = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         txtNomeAluno = new javax.swing.JTextField();
         lblNomeAluno = new javax.swing.JLabel();
@@ -71,11 +77,16 @@ public class Listar extends javax.swing.JFrame {
         btnSalvarProfessor.setText("Consultar");
 
         txtNomeProfessor.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        txtNomeProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeProfessorActionPerformed(evt);
+            }
+        });
 
         lblNomeProfessor.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblNomeProfessor.setText("Nome:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblListaProf.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -91,14 +102,14 @@ public class Listar extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setResizable(false);
+        jScrollPane1.setViewportView(tblListaProf);
+        if (tblListaProf.getColumnModel().getColumnCount() > 0) {
+            tblListaProf.getColumnModel().getColumn(0).setResizable(false);
+            tblListaProf.getColumnModel().getColumn(1).setResizable(false);
+            tblListaProf.getColumnModel().getColumn(2).setResizable(false);
+            tblListaProf.getColumnModel().getColumn(3).setResizable(false);
+            tblListaProf.getColumnModel().getColumn(4).setResizable(false);
+            tblListaProf.getColumnModel().getColumn(5).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -489,6 +500,21 @@ public class Listar extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_lblLogoutBoletimMouseClicked
 
+    private void txtNomeProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeProfessorActionPerformed
+        DefaultTableModel model = (DefaultTableModel)tblListaProf.getModel();
+        
+        
+        try{
+            ResultSet consultaProf = Main.Connection().QueryExecute("SELECT * FROM professores WHERE nome LIKE '%"+ this.txtNomeProfessor.getText() +"%' ");
+            
+            while(consultaProf.next()){
+                
+            }
+        }catch(Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
+    }//GEN-LAST:event_txtNomeProfessorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -545,7 +571,6 @@ public class Listar extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JLabel lblLogoutAl;
@@ -560,6 +585,7 @@ public class Listar extends javax.swing.JFrame {
     private javax.swing.JLabel lblNomeTurma1;
     private javax.swing.JLabel lblProfessorMat;
     private javax.swing.JLabel lblTurno;
+    private javax.swing.JTable tblListaProf;
     private javax.swing.JTextField txtNomeAluno;
     private javax.swing.JTextField txtNomeMat;
     private javax.swing.JTextField txtNomeProfessor;

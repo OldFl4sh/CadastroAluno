@@ -11,10 +11,14 @@ public class Cadastros extends javax.swing.JFrame {
         try {
             initComponents();
             ResultSet prof = Main.Connection().QueryExecute("SELECT id, nome FROM professores");
+            ResultSet turm = Main.Connection().QueryExecute("SELECT id, nome FROM turmas");
             
             while(prof.next()) {
                 this.cbProfessorMat.addItem(prof.getString("nome"));
-            }     
+            }
+            while(turm.next()){
+                this.cbTurmaAluno.addItem(turm.getString("nome"));
+            }
         }        
         catch(Exception e) {
             System.out.println("Error: " + e.getMessage());
@@ -148,7 +152,7 @@ public class Cadastros extends javax.swing.JFrame {
                         .addComponent(txtNomeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(lblCargaHorariaProfessor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                         .addComponent(txtCargaHorariaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(lblMatriculaProfessor)
@@ -281,7 +285,7 @@ public class Cadastros extends javax.swing.JFrame {
                                 .addComponent(txtNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addComponent(lblSobrenomeAluno)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                                 .addComponent(txtSobrenomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(lblMatriculaAluno)
@@ -335,7 +339,6 @@ public class Cadastros extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSalvarAluno)
                         .addGap(35, 35, 35))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
@@ -384,7 +387,7 @@ public class Cadastros extends javax.swing.JFrame {
                     .addComponent(btnSalvarMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtNomeMat, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                     .addComponent(cbProfessorMat, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -452,9 +455,9 @@ public class Cadastros extends javax.swing.JFrame {
                     .addComponent(btnSalvarTurma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtNomeTurma, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                     .addComponent(txtTurno, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(90, 256, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 629, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblLogoutTurma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -567,10 +570,18 @@ public class Cadastros extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarMatActionPerformed
 
     private void btnSalvarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAlunoActionPerformed
-        String sql = "INSERT INTO aluno VALUES(DEFAULT,"
+        try{
+            String sql = "INSERT INTO aluno VALUES(DEFAULT,"
             + "'"+this.txtMatriculaAluno.getText()+"', '"+this.txtNomeAluno.getText()+"',"
             + "'"+this.txtSobrenomeAluno.getText()+"', '"+this.txtNascimentoAluno.getText()+"',"
-            + "'"+this.txtEmailAluno.getText()+"', '"+this.txtTelefoneAluno.getText()+"');";
+            + "'"+this.txtEmailAluno.getText()+"', '"+this.txtTelefoneAluno.getText()+"','"+(this.cbTurmaAluno.getSelectedIndex()+1)+"');";
+            
+            Main.Connection().FastQuery(sql);
+            JOptionPane.showMessageDialog(null, "Aluno adcionado com sucesso!");
+            
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnSalvarAlunoActionPerformed
 
     /**
